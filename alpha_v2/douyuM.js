@@ -3,10 +3,9 @@
 // Main
 function buildMedias(inputURL) {
     const q = inputURL.split("-");
-    const offset = (parseInt(q[0]) - 1) * 20;
-    let url = "https://m.douyu.com/hgapi/live/home/newRecList?offset=" + offset + "&limit=20";
+    let url = "https://m.douyu.com/api/room/list?page="+q[0]+"&type=";
     if (q.length > 1) {
-        url = "https://m.douyu.com/hgapi/live/cate/newRecList?offset=" + offset + "&cate2=" + q[1] + "&limit=20";
+        url += q[1];
     }
 
     const req = {
@@ -15,17 +14,14 @@ function buildMedias(inputURL) {
     };
 
     $http.fetch(req).then(res => {
-        const items = JSON.parse(res.body).data.list;
+        const items =  JSON.parse(res.body).data.list;
         // print(items);
         var datas = [];
         items.forEach(item => {
-            const title = item.roomName;
+            const title = item.nickname;
             const href = String(item.rid);
-            const coverURLString = item.roomSrc;
-            var descriptionText = item.tag;
-            if (descriptionText == null || descriptionText == "" || descriptionText == undefined) {
-                descriptionText = item.hn;
-            }
+            const coverURLString = item.verticalSrc;
+            var descriptionText = item.roomName;
             datas.push(
                 buildMediaData(href, coverURLString, title, descriptionText, href)
             );
@@ -37,20 +33,19 @@ function buildMedias(inputURL) {
 function Episodes(inputURL) {
     const rid = inputURL;
     const did = "10000000000000000000000000001501";
-    const tt0 = Math.round(new Date().getTime() / 1000).toString();
+    const tt0 = Math.round(new Date().getTime()/1000).toString();
     let req = {
-        url: "https://www.douyu.com/swf_api/homeH5Enc?rids=" + rid,
+        url: "https://m.douyu.com/"+rid,
         method: "GET",
     };
 
     $http.fetch(req).then(res => {
-        const elementID = "room" + rid;
-        const jsUb9Node = JSON.parse(res.body).data[elementID];
-        eval(jsUb9Node);
-        const params = ub98484234(rid, did, tt0) + "&iar=0&ive=0&hevc=0&fa=0&cdn=tct-h5&rate=0";
+        let jsUb9  = res.body.match(/(function ub98484234[\s\S]*?)\s(var.*)/)[0];
+        eval(jsUb9);
+        const params = ub98484234(rid,did,tt0) + "&iar=0&ive=0&hevc=0&fa=0&cdn=tct-h5&rate=0&rid=" + rid;
 
         req = {
-            url: "https://www.douyu.com/lapi/live/getH5Play/" + rid,
+            url: "https://m.douyu.com/api/room/ratestream",
             method: "POST",
             body: params,
             headers: {
@@ -59,16 +54,16 @@ function Episodes(inputURL) {
         };
 
         $http.fetch(req).then(res => {
-            const content = JSON.parse(res.body).data;
-            const playURL = content.rtmp_url + '/' + content.rtmp_live;
+            const _json =  JSON.parse(res.body).data;
+            const playURL = _json.url;
             //print(playURL);
             let datas = [];
             const href = playURL;
             const title = "原畫";
             datas.push(buildEpisodeData(href, title, href));
             $next.toEpisodes(JSON.stringify(datas));
-        });
-    });
+        }); 
+    });    
 }
 
 function Player(inputURL) {

@@ -1,0 +1,37 @@
+{
+    "name": "虎牙",
+    "description": "虎牙直播",
+    "host": "https://www.huya.com",
+    "files": [
+        "txml.js",
+        "huya.js",
+        "md5.js",
+        "base64.js"
+    ],
+    "pages": [
+        {
+            "key": "index",
+            "title": "英雄联盟",
+            "url": "https://live.cdn.huya.com/liveHttpUI/getLiveList?iGid=1&iPageNo=${pageNumber}&iPageSize=30",
+            "timeout": 20,
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "wzry",
+            "title": "王者荣耀",
+            "url": "https://live.cdn.huya.com/liveHttpUI/getLiveList?iGid=2&iPageNo=${pageNumber}&iPageSize=30",
+            "javascript": "buildMedias"
+        }
+    ],
+    "episodes": {
+        "javascript": "Episodes"
+    },
+    "player": {
+        "timeout": 20,
+        "javascript": "Player"
+    },
+    "search": {
+        "url": "https://www.huya.com/search?hsk=${keyword}",
+        "javascript": "buildMedias"
+    }
+}

@@ -1,15 +1,5 @@
 [
     {
-        "id": "7812ea6f-85bd-40ee-a3de-b2ed76d52bdf",
-        "Top": true,
-        "note": "粤语港剧社区平台",
-        "GEO": "Only-China",
-        "Search": true,
-        "title": "埋堆堆",
-        "name": "SyncnextMDD",
-        "api": "Syncnext://MDD"
-    },
-    {
         "id": "e10df297-5359-41dd-8d29-dcc103ecb8b7",
         "Top": true,
         "note": "片源高畫質追求",
@@ -17,6 +7,15 @@
         "title": "低端視頻",
         "name": "SyncnextDDRK",
         "api": "Syncnext://DDRK"
+    },
+    {
+        "id": "7144ceed-563d-4bef-9cd3-6f3d789c1a70",
+        "Top": true,
+        "note": "无广告",
+        "Search": true,
+        "title": "libvio",
+        "name": "libvio",
+        "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/libvio.json"
     },
     {
         "id": "4762c94c-94bd-47a1-a903-a93431c89165",
@@ -52,7 +51,7 @@
         "GEO": "Non-China",
         "Search": true,
         "name": "泥视频",
-        "api": "syncnextPlugin://https://raw.githubusercontent.com/icy37785/syncnextPlugin/main/alpha_v2/nivod.json"
+        "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/nivod.json"
     },
     {
         "id": "219e7e12-51d4-4e62-9707-7307dc5ca7ff",
@@ -61,21 +60,21 @@
         "GEO": "Non-China",
         "Search": true,
         "name": "星视界",
-        "api": "syncnextPlugin://https://raw.githubusercontent.com/icy37785/syncnextPlugin/main/alpha_v2/histar.json"
+        "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/histar.json"
     },
     {
         "id": "9ac32fd6-0734-468b-8afc-257b02f30bd8",
         "Top": true,
         "note": "1080P 3M",
         "name": "哔嘀影视",
-        "api": "syncnextPlugin://https://raw.githubusercontent.com/icy37785/syncnextPlugin/main/alpha_v2/bdys.json"
+        "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/bdys.json"
     },
     {
         "id": "8f7b10ec-d34c-483b-93a9-f33e83ba8b2e",
         "Top": true,
         "note": "國內視頻網站索引",
         "name": "360影視大全",
-        "api": "syncnextPlugin://https://raw.githubusercontent.com/icy37785/syncnextPlugin/main/alpha_v2/360kan.json"
+        "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/360kan.json"
     },
     {
         "id": "c62ab540-a86d-445b-a16a-feb54840a240",
@@ -113,6 +112,30 @@
         "Search": true,
         "name": "非凡资源",
         "api": "http://new.ffzyapi8.com/api.php/provide/vod/from/ffm3u8/at/xml/"
+    },
+    {
+        "id": "06597cd6-593b-45fe-9a4f-fa8e42c7397a",
+        "Top": true,
+        "note": "斗鱼直播平台",
+        "name": "鬥魚直播",
+        "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/douyuM.json"
+    },
+    {
+        "id": "a3501411-30ad-4ad7-bbe4-d3870e9ab042",
+        "Top": true,
+        "note": "虎牙直播平台",
+        "name": "虎牙直播",
+        "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/huya.json"
+    },
+    {
+        "id": "7812ea6f-85bd-40ee-a3de-b2ed76d52bdf",
+        "Top": true,
+        "note": "粤语港剧社区平台",
+        "GEO": "Only-China",
+        "Search": true,
+        "title": "埋堆堆",
+        "name": "SyncnextMDD",
+        "api": "Syncnext://MDD"
     },
     {
         "id": "d2e8afb9-c98e-426c-bb09-82eee63c73e3",
