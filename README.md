@@ -12,4 +12,5 @@
 |  完整訂閲  |  訂閲地址  |
 | --- | --- |
 |原版|`https://raw.githubusercontent.com/qoli/syncnext-api/main/sourcesv3.json`|
-|自用|`https://raw.githubusercontent.com/icy37785/syncnextPlugin/main/sourcesv3.json`|
+|icy37785|`https://raw.githubusercontent.com/icy37785/syncnextPlugin/main/sourcesv3.json`|
+|Quinndark|`https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/sourcesv3.json`|
