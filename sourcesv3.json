@@ -18,6 +18,15 @@
         "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/libvio.json"
     },
     {
+        "id": "6052f8ef-c731-4ba7-a551-9b6950157fb0",
+        "Top": true,
+        "note": "在线动漫资源门户漫",
+        "Search": true,
+        "title": "anfuns",
+        "name": "anfuns",
+        "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/libvio.json"
+    },
+    {
         "id": "4762c94c-94bd-47a1-a903-a93431c89165",
         "Top": true,
         "note": "海外剧、综艺、动漫",
