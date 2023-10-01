@@ -1,0 +1,52 @@
+{
+    "name": "anfuns",
+    "description": "在线动漫资源门户",
+    "host": "https://anfuns.cc",
+    "files": [
+        "anfuns.js",
+        "txml.js",
+        "base64.js"
+    ],
+    "pages": [
+        {
+            "key": "index",
+            "title": "最近更新",
+            "url": "https://www.anfuns.cc/map.html",
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "new",
+            "title": "新旧番剧",
+            "url": "https://www.anfuns.cc/type/1-${pageNumber}.html",
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "bd",
+            "title": "蓝光无修",
+            "url": "https://www.anfuns.cc/type/2-${pageNumber}.html",
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "movie",
+            "title": "剧场版",
+            "url": "https://www.anfuns.cc/type/3-${pageNumber}.html",
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "euAndUs",
+            "title": "欧美动漫",
+            "url": "https://www.anfuns.cc/type/3-${pageNumber}.html",
+            "javascript": "buildMedias"
+        }
+    ],
+    "episodes": {
+        "javascript": "Episodes"
+    },
+    "player": {
+        "javascript": "Player"
+    },
+    "search": {
+        "url": "https://www.anfuns.cc/search.html?wd=${keyword}&submit=",
+        "javascript": "Search"
+    }
+}
