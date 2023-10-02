@@ -54,15 +54,6 @@
         "api": "Syncnext://OLE"
     },
     {
-        "id": "4cd6c579-1d6f-42d9-a9be-c26d3cbfd835",
-        "Top": true,
-        "note": "海外華人在綫影院",
-        "GEO": "Non-China",
-        "Search": true,
-        "name": "泥视频",
-        "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/nivod.json"
-    },
-    {
         "id": "219e7e12-51d4-4e62-9707-7307dc5ca7ff",
         "Top": true,
         "note": "海外華人免費影視大全",
@@ -79,11 +70,11 @@
         "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/bdys.json"
     },
     {
-        "id": "8f7b10ec-d34c-483b-93a9-f33e83ba8b2e",
+        "id": "18ffea3a-dfcd-4e95-bf18-f65166ffa0c6",
         "Top": true,
-        "note": "國內視頻網站索引",
-        "name": "360影視大全",
-        "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/360kan.json"
+        "note": "在线之家",
+        "name": "在线观看最新美剧",
+        "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/zxzj.json"
     },
     {
         "id": "c62ab540-a86d-445b-a16a-feb54840a240",

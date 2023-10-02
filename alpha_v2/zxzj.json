@@ -1,0 +1,58 @@
+{
+    "name": "在线之家",
+    "description": "在线动漫资源门户",
+    "host": "https://www.zxzj.pro",
+    "files": [
+        "zxzj.js",
+        "txml.js",
+        "base64.js"
+    ],
+    "pages": [
+        {
+            "key": "index",
+            "title": "首页",
+            "url": "https://www.zxzj.pro",
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "movie",
+            "title": "电影",
+            "url": "https://www.zxzj.pro/list/1-${pageNumber}.html",
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "us",
+            "title": "蓝光无修",
+            "url": "https://www.zxzj.pro/list/2-${pageNumber}.html",
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "kr",
+            "title": "韩剧",
+            "url": "https://www.zxzj.pro/list/3-${pageNumber}.html",
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "jp",
+            "title": "日剧",
+            "url": "https://www.zxzj.pro/list/4-${pageNumber}.html",
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "anime",
+            "title": "动漫",
+            "url": "https://www.zxzj.pro/list/6-${pageNumber}.html",
+            "javascript": "buildMedias"
+        }
+    ],
+    "episodes": {
+        "javascript": "Episodes"
+    },
+    "player": {
+        "javascript": "Player"
+    },
+    "search": {
+        "url": "https://www.zxzj.pro/vodsearch/-------------.html?wd=${keyword}&submit=",
+        "javascript": "Search"
+    }
+}
