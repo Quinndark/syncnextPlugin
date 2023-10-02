@@ -102,9 +102,7 @@ function Player(inputURL) {
         html = xml.match(/r player_.*?=(.*?)</)[1];
 
         var js = JSON.parse(html);
-        urlEncode = base64Decode(js.url)
-        url = decodeURIComponent(urlEncode)
-        $next.toPlayer(url);
+        $next.toPlayer(js.url);
 
     })
 }
