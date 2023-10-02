@@ -119,6 +119,9 @@ function Player(inputURL) {
             var req = {
                 url: url,
                 method: "GET",
+                headers: {
+                    'Referer': 'https://www.zxzj.pro',
+                }
             };
             $http.fetch(req).then(function (res) {
                 const ifrwy = res.body
