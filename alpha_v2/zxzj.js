@@ -100,13 +100,45 @@ function Player(inputURL) {
     $http.fetch(req).then(function (res) {
         var xml = res.body;
         html = xml.match(/r player_.*?=(.*?)</)[1];
+        const json = JSON.parse(html);
+        const url = json.url;
+        const from = json.from;
 
-        var js = JSON.parse(html);
-        $next.toPlayer(js.url);
+        if (json.encrypt == '1') {
+            url = url
+            $next.toPlayer(url);
+        } else if (json.encrypt == '2') {
+            url = base64Decode(url)
+            $next.toPlayer(url);
+        }
+        if (url.indexOf('m3u8') >= 0 || url.indexOf('mp4') >= 0) {
+            // console.debug('在线之家url =====>' + url); // js_debug.log
+            $next.toPlayer(url);
+        } else if (from.indexOf('line3') >= 0 || from.indexOf('line5') >= 0) {
+
+            var req = {
+                url: url,
+                method: "GET",
+            };
+            $http.fetch(req).then(function (res) {
+                const ifrwy = res.body
+                const code = ifrwy.match(/var url = '(.*?)'/)[1].split('').reverse().join('');
+                let temp = '';
+                for (let i = 0x0; i < code.length; i = i + 0x2) {
+                    temp += String.fromCharCode(parseInt(code[i] + code[i + 0x1], 0x10))
+                }
+                const url = temp.substring(0x0, (temp.length - 0x7) / 0x2) + temp.substring((temp.length - 0x7) / 0x2 + 0x7);
+                $next.toPlayer(url);
+            })
+
+        } else {
+            // console.debug('在线之家url =====>' + '空'); // js_debug.log
+            return '{}';
+        }
+
 
     })
 }
-
 function Search(inputURL) {
     const req = {
         //url: "https://www.histar.tv/_next/data/" + buildId + "/search.json?word=" + inputURL,
