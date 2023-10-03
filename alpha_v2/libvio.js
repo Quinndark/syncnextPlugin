@@ -180,4 +180,28 @@ function Player(inputURL) {
 
     });
 }
+function Search(inputURL) {
+    const req = {
+        //url: "https://www.histar.tv/_next/data/" + buildId + "/search.json?word=" + inputURL,
+        url: inputURL,//直接從網頁獲取搜索結果
+        method: "GET",
+    };
+    $http.fetch(req).then(res => {
+        var content = tXml.getElementsByClassName(res.body, "stui-vodlist__box");
 
+        let datas = [];
+        for (var index = 0; index < content.length; index++) {
+            var dom = content[index];
+            //print(content.length)
+
+            var title = findAllByKey(dom, "title")[0];
+            var href = findAllByKey(dom, "href")[0];
+
+            href = buildURL(href);
+
+            datas.push(buildEpisodeData(href, title, href));
+        }
+
+        $next.toMedias(JSON.stringify(datas));
+    });
+}

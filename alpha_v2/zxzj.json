@@ -1,6 +1,6 @@
 {
     "name": "在线之家",
-    "description": "在线动漫资源门户",
+    "description": "在线观看美剧",
     "host": "https://www.zxzj.pro",
     "files": [
         "zxzj.js",
@@ -22,7 +22,7 @@
         },
         {
             "key": "us",
-            "title": "蓝光无修",
+            "title": "美剧",
             "url": "https://www.zxzj.pro/list/2-${pageNumber}.html",
             "javascript": "buildMedias"
         },

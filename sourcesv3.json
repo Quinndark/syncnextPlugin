@@ -72,8 +72,8 @@
     {
         "id": "18ffea3a-dfcd-4e95-bf18-f65166ffa0c6",
         "Top": true,
-        "note": "在线之家",
-        "name": "在线观看最新美剧",
+        "note": "在线观看最新美剧",
+        "name": "在线之家",
         "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/zxzj.json"
     },
     {
