@@ -101,22 +101,29 @@ function Episodes(inputURL) {
     getRoomInfo(id).then(function (info) {
         //print(info);
 
-        var streamInfo = getLives(info)
+        getLives(info).then(function (streamInfo) {
+            //print(streamInfo.flv);
+            var flv = streamInfo.flv;
 
-        //print(streamInfo.flv);
-        var hls = streamInfo.flv;
+            //print(1);
 
-        //print(1);
+            for (var [key, value] of Object.entries(flv)) {
+                href = value;
+                //print(href);
 
-        for (var [key, value] of Object.entries(hls)) {
-            href = value;
-            //print(href);
+                title = key;
+                datas.push(buildEpisodeData(href, title, href));
+            }
 
-            title = key;
-            datas.push(buildEpisodeData(href, title, href));
-        }
+            $next.toEpisodes(JSON.stringify(datas));
 
-        $next.toEpisodes(JSON.stringify(datas));
+
+
+
+
+
+        })
+
 
 
 
@@ -168,57 +175,58 @@ function getRoomInfo(id) {
 }
 function getLives(ri) {
     var streamInfo = { flv: {}, hls: {} };
-    //const json = {
-    //appId: 5002,
-    //byPass: 3,
-    //context: '',
-    //version: '2.4',
-    //data: {},
-    //}
-    //const req = {
-    //url: 'https://udblgn.huya.com/web/anonymousLogin',
-    //method: "POST",
-    //headers: {
-    //'Content-Type': 'application/json'
-    // },
+    const json = {
+        appId: 5002,
+        byPass: 3,
+        context: '',
+        version: '2.4',
+        data: {},
+    }
+    const req = {
+        url: 'https://udblgn.huya.com/web/anonymousLogin',
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
 
-    // body: JSON.stringify(json)
-    //}
+        body: JSON.stringify(json)
+    }
     //print(req);
 
-    //return $http.fetch(req).then(function (res) {
+    return $http.fetch(req).then(function (res) {
 
-    //const obj = JSON.parse(res.body)
-    //print(res.body)
-    uid = 1199636131141;
+        const obj = JSON.parse(res.body)
+        //print(res.body)
+        uid = obj.uid;
 
-    for (let item of ri.roomInfo.tLiveInfo.tLiveStreamInfo.vStreamInfo.value) {
-        if (item.sFlvUrl) {
-            var anticode = parseAnticode(item.sFlvAntiCode, uid, item.sStreamName)
-            //print(item.sFlvAntiCode);
-            var url = `${item.sFlvUrl}/${item.sStreamName}.${item.sFlvUrlSuffix}?${anticode}`
-            streamInfo['flv'][cdn[item.sCdnType]] = url
-        }
+        for (let item of ri.roomInfo.tLiveInfo.tLiveStreamInfo.vStreamInfo.value) {
+            if (item.sFlvUrl) {
+                var anticode = parseAnticode(item.sFlvAntiCode, uid, item.sStreamName)
+                //print(item.sFlvAntiCode);
+                var url = `${item.sFlvUrl}/${item.sStreamName}.${item.sFlvUrlSuffix}?${anticode}`
+                streamInfo['flv'][cdn[item.sCdnType]] = url
+            }
 
-        //if (item.sHlsUrl) {
-        //var anticode = parseAnticode(item.sHlsAntiCode, uid, item.sStreamName)
-        //var url = `${item.sHlsUrl}/${item.sStreamName}.${item.sHlsUrlSuffix}?${anticode}`
-        //streamInfo['hls'][cdn[item.sCdnType]] = url
-        //}
-        //print(streamInfo);
-
-
-        //}
-
-    };
-
-    return streamInfo;
+            //if (item.sHlsUrl) {
+            //var anticode = parseAnticode(item.sHlsAntiCode, uid, item.sStreamName)
+            //var url = `${item.sHlsUrl}/${item.sStreamName}.${item.sHlsUrlSuffix}?${anticode}`
+            //streamInfo['hls'][cdn[item.sCdnType]] = url
+            //}
+            //print(streamInfo);
 
 
+            //}
 
+        };
 
-
+        return streamInfo;
+    })
 }
+
+
+
+
+    }
 
 
 function parseAnticode(code, uid, streamname) {
