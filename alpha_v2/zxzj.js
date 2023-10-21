@@ -144,7 +144,9 @@ function Player(inputURL) {
             };
             $http.fetch(req).then(function (res) {
                 const ifrwy = res.body
-                const code = ifrwy.match(/var url = '(.*?)'/)[1].split('').reverse().join('');
+                const code = ifrwy.match(/var result_v2 = '(.*?)'/)[1].split('').reverse().join('');
+                print(code)
+                code = code.data
                 let temp = '';
                 for (let i = 0x0; i < code.length; i = i + 0x2) {
                     temp += String.fromCharCode(parseInt(code[i] + code[i + 0x1], 0x10))
