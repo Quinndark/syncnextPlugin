@@ -104,7 +104,7 @@ function Episodes(inputURL) {
         var streamInfo = getLives(info)
 
         //print(streamInfo.flv);
-        var hls = streamInfo.hls;
+        var hls = streamInfo.flv;
 
         //print(1);
 
