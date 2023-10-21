@@ -134,7 +134,7 @@ function Player(inputURL) {
                 $next.toPlayer(url);
             })
 
-        } else {
+        } else if (from.indexOf('lep') >= 0) {
             var req = {
                 url: url,
                 method: "GET",
@@ -154,6 +154,10 @@ function Player(inputURL) {
                 const url = temp.substring(0x0, (temp.length - 0x7) / 0x2) + temp.substring((temp.length - 0x7) / 0x2 + 0x7);
                 $next.toPlayer(url);
             })
+        }
+        else {
+            return ''
+
         }
 
 
