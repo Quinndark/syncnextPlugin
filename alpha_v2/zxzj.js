@@ -110,7 +110,28 @@ function Player(inputURL) {
         } else if (json.encrypt == '2') {
             url = base64Decode(url)
             $next.toPlayer(url);
+        } else if (json.encrypt == '3') {
+            var req = {
+                url: url,
+                method: "GET",
+                headers: {
+                    'Referer': 'https://www.zxzj.pro',
+                }
+            };
+            $http.fetch(req).then(function (res) {
+                const ifrwy = res.body
+                const code = ifrwy.match(/var result_v2 = '(.*?)'/)[1].split('').reverse().join('');
+                print(code)
+                code = code.data
+                let temp = '';
+                for (let i = 0x0; i < code.length; i = i + 0x2) {
+                    temp += String.fromCharCode(parseInt(code[i] + code[i + 0x1], 0x10))
+                }
+                const url = temp.substring(0x0, (temp.length - 0x7) / 0x2) + temp.substring((temp.length - 0x7) / 0x2 + 0x7);
+                $next.toPlayer(url);
+            })
         }
+
         if (url.indexOf('m3u8') >= 0 || url.indexOf('mp4') >= 0) {
             // console.debug('在线之家url =====>' + url); // js_debug.log
             $next.toPlayer(url);
@@ -134,26 +155,6 @@ function Player(inputURL) {
                 $next.toPlayer(url);
             })
 
-        } else if (from.indexOf('lep') >= 0) {
-            var req = {
-                url: url,
-                method: "GET",
-                headers: {
-                    'Referer': 'https://www.zxzj.pro',
-                }
-            };
-            $http.fetch(req).then(function (res) {
-                const ifrwy = res.body
-                const code = ifrwy.match(/var result_v2 = '(.*?)'/)[1].split('').reverse().join('');
-                print(code)
-                code = code.data
-                let temp = '';
-                for (let i = 0x0; i < code.length; i = i + 0x2) {
-                    temp += String.fromCharCode(parseInt(code[i] + code[i + 0x1], 0x10))
-                }
-                const url = temp.substring(0x0, (temp.length - 0x7) / 0x2) + temp.substring((temp.length - 0x7) / 0x2 + 0x7);
-                $next.toPlayer(url);
-            })
         }
         else {
             return ''
