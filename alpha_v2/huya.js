@@ -193,18 +193,18 @@ function getLives(ri) {
     uid = 1199636131141;
 
     for (let item of ri.roomInfo.tLiveInfo.tLiveStreamInfo.vStreamInfo.value) {
-        //if (item.sFlvUrl) {
-        //var anticode = parseAnticode(item.sFlvAntiCode, uid, item.sStreamName)
-        //print(item.sFlvAntiCode);
-        //var url = `${item.sFlvUrl}/${item.sStreamName}.${item.sFlvUrlSuffix}?${anticode}`
-        //streamInfo['flv'][cdn[item.sCdnType]] = url
-        //}
-
-        if (item.sHlsUrl) {
-            var anticode = parseAnticode(item.sHlsAntiCode, uid, item.sStreamName)
-            var url = `${item.sHlsUrl}/${item.sStreamName}.${item.sHlsUrlSuffix}?${anticode}`
-            streamInfo['hls'][cdn[item.sCdnType]] = url
+        if (item.sFlvUrl) {
+            var anticode = parseAnticode(item.sFlvAntiCode, uid, item.sStreamName)
+            //print(item.sFlvAntiCode);
+            var url = `${item.sFlvUrl}/${item.sStreamName}.${item.sFlvUrlSuffix}?${anticode}`
+            streamInfo['flv'][cdn[item.sCdnType]] = url
         }
+
+        //if (item.sHlsUrl) {
+        //var anticode = parseAnticode(item.sHlsAntiCode, uid, item.sStreamName)
+        //var url = `${item.sHlsUrl}/${item.sStreamName}.${item.sHlsUrlSuffix}?${anticode}`
+        //streamInfo['hls'][cdn[item.sCdnType]] = url
+        //}
         //print(streamInfo);
 
 
