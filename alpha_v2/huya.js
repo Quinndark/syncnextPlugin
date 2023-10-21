@@ -226,9 +226,6 @@ function getLives(ri) {
 
 
 
-    }
-
-
 function parseAnticode(code, uid, streamname) {
     var q = {};
     //print(typeof (code));
