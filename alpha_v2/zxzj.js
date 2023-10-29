@@ -103,6 +103,7 @@ function Player(inputURL) {
         const json = JSON.parse(html);
         const url = json.url;
         const from = json.from;
+        print(json.encrypt)
 
         if (json.encrypt == '1') {
             url = url
@@ -120,14 +121,22 @@ function Player(inputURL) {
             };
             $http.fetch(req).then(function (res) {
                 const ifrwy = res.body
-                const code = ifrwy.match(/var result_v2 = '(.*?)'/)[1].split('').reverse().join('');
-                print(code)
-                code = code.data
+                var code = ifrwy.match(/(?<={).+?(?=})/);
+                //var code = ifrwy.compile('result_v2 =(.+);')
+                code = "{" + code + "}"
+
+                code = JSON.parse(code)
+                //print(typeof (code))
+
+                code = code["data"]
+                //print(code)
+
 
                 _0x3a1d23 = strRevers(code);
+                //print(_0x3a1d23)
                 _0x3a1d23 = htoStr(_0x3a1d23);
-                url = decodeStr(_0x3a1d23)
-                $next.toPlayer(url)
+                //print(_0x3a1d23)
+                $next.toPlayer(decodeStr(_0x3a1d23))
             })
         }
 
@@ -155,10 +164,7 @@ function Player(inputURL) {
             })
 
         }
-        else {
-            return ''
 
-        }
 
 
     })
@@ -209,7 +215,7 @@ function print(params) {
 function jie(_0x3a1d23) {
     _0x3a1d23 = this.strRevers(_0x3a1d23);
     _0x3a1d23 = this.htoStr(_0x3a1d23);
-    return this.decodeStr(_0x3a1d23);
+    return decodeStr(_0x3a1d23);
 }
 function htoStr(_0x335e0c) {
     var _0x19492b = '';
