@@ -123,12 +123,11 @@ function Player(inputURL) {
                 const code = ifrwy.match(/var result_v2 = '(.*?)'/)[1].split('').reverse().join('');
                 print(code)
                 code = code.data
-                let temp = '';
-                for (let i = 0x0; i < code.length; i = i + 0x2) {
-                    temp += String.fromCharCode(parseInt(code[i] + code[i + 0x1], 0x10))
-                }
-                const url = temp.substring(0x0, (temp.length - 0x7) / 0x2) + temp.substring((temp.length - 0x7) / 0x2 + 0x7);
-                $next.toPlayer(url);
+
+                _0x3a1d23 = strRevers(code);
+                _0x3a1d23 = htoStr(_0x3a1d23);
+                url = decodeStr(_0x3a1d23)
+                $next.toPlayer(url)
             })
         }
 
@@ -206,4 +205,25 @@ function findAllByKey(obj, keyToFind) {
 }
 function print(params) {
     console.log(JSON.stringify(params));
+}
+function jie(_0x3a1d23) {
+    _0x3a1d23 = this.strRevers(_0x3a1d23);
+    _0x3a1d23 = this.htoStr(_0x3a1d23);
+    return this.decodeStr(_0x3a1d23);
+}
+function htoStr(_0x335e0c) {
+    var _0x19492b = '';
+    for (var _0x53a455 = 0; _0x53a455 < _0x335e0c.length; _0x53a455 = _0x53a455 + 2) {
+        var _0x4091f2 = _0x335e0c[_0x53a455] + _0x335e0c[_0x53a455 + 1];
+        _0x4091f2 = parseInt(_0x4091f2, 16);
+        _0x19492b += String.fromCharCode(_0x4091f2);
+    }
+    return _0x19492b;
+}
+functionstrRevers(_0x5d6b71){
+    return _0x5d6b71.split('').reverse();
+}
+function decodeStr(_0x267828) {
+    var _0x5cd2b5 = (_0x267828.length - 7) / 2, _0x2191ed = _0x267828.substring(0, _0x5cd2b5), _0x35a256 = _0x267828.substring(_0x5cd2b5 + 7);
+    return _0x2191ed + _0x35a256;
 }
