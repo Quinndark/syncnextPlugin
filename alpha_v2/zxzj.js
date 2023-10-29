@@ -220,7 +220,7 @@ function htoStr(_0x335e0c) {
     }
     return _0x19492b;
 }
-functionstrRevers(_0x5d6b71){
+function strRevers(_0x5d6b71) {
     return _0x5d6b71.split('').reverse();
 }
 function decodeStr(_0x267828) {
