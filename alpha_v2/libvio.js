@@ -134,42 +134,88 @@ function Player(inputURL) {
             method: "GET",
         };
 
-        $http.fetch(req2).then(
-            function (res) {
-                paurl = res.body.match(/ src="(.*?)'/)[1];
-                var playAPIURL =
-                    paurl + url + '&next=' + next + '&id=' + id + '&nid=' + nid;
+        if (from === 'tweb') {
+
+            $http.fetch(req2).then(
+                function (res) {
+                    paurl = res.body.match(/ src="(.*?)'/)[1];
+                    var playAPIURL =
+                        paurl + url;
+
+                    var req = {
+                        url: playAPIURL,
+                        headers: {
+                            Referer: 'https://www.libvio.pro/'
+                        }
+                    };
+                    //print(req);
+
+                    $http.fetch(req).then(function (res) {
+
+                        const ifrwy = res.body
+                        var code = ifrwy.match(/(?<={).+?(?=})/);
+                        //var code = ifrwy.compile('result_v2 =(.+);')
+                        code = "{" + code + "}"
+
+                        code = JSON.parse(code)
+                        //print(typeof (code))
+
+                        code = code["data"]
+                        //print(code)
+
+
+                        _0x3a1d23 = strRevers(code);
+                        //print(_0x3a1d23)
+                        _0x3a1d23 = htoStr(_0x3a1d23);
+                        //print(_0x3a1d23)
+                        $next.toPlayer(decodeStr(_0x3a1d23))
+                    });
+
+
+                }
+
+            );
 
 
 
 
-                var req = {
-                    url: playAPIURL,
-                    headers: {
-                        Referer: 'https://www.libvio.pro/'
-                    }
-                };
-                //print(req);
 
-                $http.fetch(req).then(function (res) {
+        } else (
 
-                    var body = res.body;
+            $http.fetch(req2).then(
+                function (res) {
+                    paurl = res.body.match(/ src="(.*?)'/)[1];
+                    var playAPIURL =
+                        paurl + url + '&next=' + next + '&id=' + id + '&nid=' + nid;
 
 
 
-                    var url = body.match(/var .* = '(.*?)'/)[0];
 
-                    url = url.match(/'([^']*)'/)[0];
-                    //console.log(typeof (url));
-                    //print(url);
-                    url = url.substring(1, url.length - 1);
-                    print(url);
+                    var req = {
+                        url: playAPIURL,
+                        headers: {
+                            Referer: 'https://www.libvio.pro/'
+                        }
+                    };
+                    //print(req);
 
-                    $next.toPlayer(url);
-                });
+                    $http.fetch(req).then(function (res) {
 
+                        var body = res.body;
 
-            }
+                        var url = body.match(/var .* = '(.*?)'/)[0];
+
+                        url = url.match(/'([^']*)'/)[0];
+                        //console.log(typeof (url));
+                        //print(url);
+                        url = url.substring(1, url.length - 1);
+                        print(url);
+                        $next.toPlayer(url);
+                    });
+
+                }
+
+            )
 
         );
 
@@ -204,4 +250,20 @@ function Search(inputURL) {
 
         $next.toMedias(JSON.stringify(datas));
     });
+}
+function htoStr(_0x335e0c) {
+    var _0x19492b = '';
+    for (var _0x53a455 = 0; _0x53a455 < _0x335e0c.length; _0x53a455 = _0x53a455 + 2) {
+        var _0x4091f2 = _0x335e0c[_0x53a455] + _0x335e0c[_0x53a455 + 1];
+        _0x4091f2 = parseInt(_0x4091f2, 16);
+        _0x19492b += String.fromCharCode(_0x4091f2);
+    }
+    return _0x19492b;
+}
+function strRevers(_0x5d6b71) {
+    return _0x5d6b71.split('').reverse();
+}
+function decodeStr(_0x267828) {
+    var _0x5cd2b5 = (_0x267828.length - 7) / 2, _0x2191ed = _0x267828.substring(0, _0x5cd2b5), _0x35a256 = _0x267828.substring(_0x5cd2b5 + 7);
+    return _0x2191ed + _0x35a256;
 }

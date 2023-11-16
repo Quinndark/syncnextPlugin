@@ -1,0 +1,40 @@
+{
+    "name": "grigrilove",
+    "description": "grigri爱动漫",
+    "host": "https://anime.girigirilove.com",
+    "files": [
+        "grigri.js",
+        "txml.js",
+        "base64.js"
+    ],
+    "pages": [
+        {
+            "key": "index",
+            "title": "最近更新",
+            "url": "https://anime.girigirilove.com/show/2--------${pageNumber}---/",
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "bd",
+            "title": "剧场版",
+            "url": "https://anime.girigirilove.com/show/21--------${pageNumber}---/",
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "movie",
+            "title": "剧场版",
+            "url": "https://www.anfuns.cc/type/3-${pageNumber}.html",
+            "javascript": "buildMedias"
+        }
+    ],
+    "episodes": {
+        "javascript": "Episodes"
+    },
+    "player": {
+        "javascript": "Player"
+    },
+    "search": {
+        "url": "https://anime.girigirilove.com/search/-------------/?wd=${keyword}",
+        "javascript": "Search"
+    }
+}
