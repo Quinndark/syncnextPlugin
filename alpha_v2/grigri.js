@@ -37,7 +37,7 @@ function buildMedias(inputURL) {
     $http.fetch(req).then(function (res) {
         //print(res.body)
         var content = tXml.getElementsByClassName(res.body, "public-list-div");
-        print(content)
+        //print(content)
         for (var index = 0; index < content.length; index++) {
 
             var dom = content[index];
