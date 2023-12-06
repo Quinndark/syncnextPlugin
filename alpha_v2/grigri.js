@@ -35,8 +35,9 @@ function buildMedias(inputURL) {
     let datas = [];
 
     $http.fetch(req).then(function (res) {
+        //print(res.body)
         var content = tXml.getElementsByClassName(res.body, "public-list-div");
-
+        print(content)
         for (var index = 0; index < content.length; index++) {
 
             var dom = content[index];
@@ -44,10 +45,12 @@ function buildMedias(inputURL) {
 
             var title = findAllByKey(dom, "title")[0];
             var href = findAllByKey(dom, "href")[0];
-            var coverURLString = findAllByKey(dom, "data-original")[0];
-            var descriptionText = '';
+            var coverURLString = findAllByKey(dom, "data-src")[0];
+            var descriptionText = findAllByKey(dom, "public-list-prb")[0];
 
             href = buildURL(href);
+            coverURLString = buildURL(coverURLString);
+
 
             datas.push(
                 buildMediaData(href, coverURLString, title, descriptionText, href)
@@ -59,7 +62,7 @@ function buildMedias(inputURL) {
 }
 function buildURL(href) {
     if (!href.startsWith("http")) {
-        href = "https://www.anfuns.cc" + href;
+        href = "https://anime.girigirilove.com" + href;
     }
     return href;
 }
@@ -73,7 +76,7 @@ function Episodes(inputURL) {
     let datas = [];
 
     $http.fetch(req).then(function (res) {
-        var content = tXml.getElementsByClassName(res.body, "hl-plays-list")[0];
+        var content = tXml.getElementsByClassName(res.body, "anthology-list-play")[0];
         //print(content.children.length);
 
         for (var index = 0; index < content.children.length; index++) {

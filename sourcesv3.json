@@ -54,13 +54,12 @@
         "api": "Syncnext://OLE"
     },
     {
-        "id": "219e7e12-51d4-4e62-9707-7307dc5ca7ff",
+        "id": "AEE28239-B325-A9A3-CBA6-733530EB4C89",
         "Top": true,
-        "note": "海外華人免費影視大全",
-        "GEO": "Non-China",
+        "note": "grigri动漫",
         "Search": true,
-        "name": "星视界",
-        "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/histar.json"
+        "name": "grigri动漫",
+        "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/grigri.json"
     },
     {
         "id": "9ac32fd6-0734-468b-8afc-257b02f30bd8",

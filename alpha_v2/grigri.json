@@ -19,12 +19,6 @@
             "title": "剧场版",
             "url": "https://anime.girigirilove.com/show/21--------${pageNumber}---/",
             "javascript": "buildMedias"
-        },
-        {
-            "key": "movie",
-            "title": "剧场版",
-            "url": "https://www.anfuns.cc/type/3-${pageNumber}.html",
-            "javascript": "buildMedias"
         }
     ],
     "episodes": {
