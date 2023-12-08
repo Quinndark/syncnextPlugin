@@ -117,6 +117,9 @@ function Player(inputURL) {
                 method: "GET",
                 headers: {
                     'Referer': 'https://www.zxzj.pro',
+                    'Sec-Fetch-Dest': 'iframe',
+                    'Sec-Fetch-Site': 'cross-site',
+                    'Sec-Fetch-Mode': 'navigate',
                 }
             };
             $http.fetch(req).then(function (res) {
