@@ -180,8 +180,46 @@ function Player(inputURL) {
 
 
 
-        } else (
+        } else if (from == 'ty_new1') {
+            $http.fetch(req2).then(
+                function (res) {
+                    paurl = res.body.match(/ src="(.*?)'/)[1];
+                    var paurl = 'https://p2.cfnode1.xyz/ty4.php?url='
+                    var playAPIURL =
+                        paurl + url;
 
+                    var req = {
+                        url: playAPIURL,
+                        headers: {
+                            Referer: 'https://www.libvio.pro/'
+                        }
+                    };
+                    //print(req);
+
+                    $http.fetch(req).then(function (res) {
+
+                        var body = res.body;
+
+                        var url = body.match(/var .* = '(.*?)'/)[0];
+                        url = url.match(/'([^']*)'/)[0];
+                        //console.log(typeof (url));
+                        //print(url);
+                        url = url.substring(1, url.length - 1);
+                        //print(url);
+                        $next.toPlayer(url);
+
+
+                    });
+
+
+                }
+
+            );
+
+
+
+
+        } else {
             $http.fetch(req2).then(
                 function (res) {
                     paurl = res.body.match(/ src="(.*?)'/)[1];
@@ -216,8 +254,7 @@ function Player(inputURL) {
                 }
 
             )
-
-        );
+        }
 
 
 
