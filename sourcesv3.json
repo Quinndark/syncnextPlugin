@@ -6,7 +6,7 @@
         "Search": true,
         "title": "libvio",
         "name": "libvio",
-        "cover": "https://sm.ms/image/KoJRfMV4DsgNTl9",
+        "cover": "https://s2.loli.net/2023/12/28/KoJRfMV4DsgNTl9.png",
         "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/libvio.json"
     },
     {
@@ -25,7 +25,7 @@
         "note": "grigri动漫",
         "Search": true,
         "name": "grigri动漫",
-        "cover": "https://sm.ms/image/HIJvdf8AlzDw1B4",
+        "cover": "https://s2.loli.net/2023/12/28/HIJvdf8AlzDw1B4.png",
         "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/grigri.json"
     },
     {
@@ -40,7 +40,7 @@
         "Top": true,
         "note": "在线观看最新美剧",
         "name": "在线之家",
-        "cover": "https://sm.ms/image/qP7yAGswkvB2nDU",
+        "cover": "https://s2.loli.net/2023/12/28/qP7yAGswkvB2nDU.png",
         "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/zxzj.json"
     }
 ]
