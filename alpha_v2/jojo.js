@@ -35,17 +35,17 @@ function buildMedias(inputURL) {
     let datas = [];
 
     $http.fetch(req).then(function (res) {
-        var content = tXml.getElementsByClassName(res.body, "stui-vodlist__box");
+        var content = tXml.getElementsByClassName(res.body, "content-item");
 
         for (var index = 0; index < content.length; index++) {
 
             var dom = content[index];
             //print(content.length)
 
-            var title = findAllByKey(dom, "title")[0];
+            var title = findAllByKey(dom, "card-title")[0];
             var href = findAllByKey(dom, "href")[0];
-            var coverURLString = findAllByKey(dom, "data-original")[0];
-            var descriptionText = '';
+            var coverURLString = findAllByKey(dom, "src")[0];
+            var descriptionText = findAllByKey(dom, "score")[0];
 
             href = buildURL(href);
 
@@ -59,7 +59,7 @@ function buildMedias(inputURL) {
 }
 function buildURL(href) {
     if (!href.startsWith("http")) {
-        href = "https://www.zxzj.pro" + href;
+        href = "https://jiohub.top" + href;
     }
     return href;
 }
@@ -73,7 +73,7 @@ function Episodes(inputURL) {
     let datas = [];
 
     $http.fetch(req).then(function (res) {
-        var content = tXml.getElementsByClassName(res.body, "stui-content__playlist")[0];
+        var content = tXml.getElementsByClassName(res.body, "jojo-plyr-list")[0];
         //print(content.children.length);
 
         for (var index = 0; index < content.children.length; index++) {
@@ -175,7 +175,7 @@ function Player(inputURL) {
 
     })
 }
-function Search(inputURL, key) {
+function Search(inputURL) {
     const req = {
         //url: "https://www.histar.tv/_next/data/" + buildId + "/search.json?word=" + inputURL,
         url: inputURL,//直接從網頁獲取搜索結果
@@ -197,7 +197,7 @@ function Search(inputURL, key) {
             datas.push(buildEpisodeData(href, title, href));
         }
 
-        $next.toSearchMedias(JSON.stringify(returnDatas), key);
+        $next.toMedias(JSON.stringify(datas));
     });
 }
 

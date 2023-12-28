@@ -1,6 +1,6 @@
 function tXml(a, c) {
   function d() {
-    for (var c = []; a[b]; )
+    for (var c = []; a[b];)
       if (60 == a.charCodeAt(b)) {
         if (47 === a.charCodeAt(b + 1)) {
           b = a.indexOf(">", b);
@@ -19,7 +19,7 @@ function tXml(a, c) {
             )
               b = a.indexOf(">", b + 1);
             -1 === b && (b = a.length);
-          } else for (b += 2; 62 !== a.charCodeAt(b) && a[b]; ) b++;
+          } else for (b += 2; 62 !== a.charCodeAt(b) && a[b];) b++;
           b++;
           continue;
         }
@@ -35,12 +35,12 @@ function tXml(a, c) {
     return c;
   }
   function k() {
-    for (var c = b; -1 === m.indexOf(a[b]) && a[b]; ) b++;
+    for (var c = b; -1 === m.indexOf(a[b]) && a[b];) b++;
     return a.slice(c, b);
   }
   function g() {
     b++;
-    for (var c = k(), g = {}, f = []; 62 !== a.charCodeAt(b) && a[b]; ) {
+    for (var c = k(), g = {}, f = []; 62 !== a.charCodeAt(b) && a[b];) {
       var e = a.charCodeAt(b);
       if ((64 < e && 91 > e) || (96 < e && 123 > e)) {
         var h = k();
@@ -72,11 +72,11 @@ function tXml(a, c) {
           (f = [a.slice(f, b - 1)]),
           (b += 9))
         : "style" == c
-        ? ((f = b + 1),
-          (b = a.indexOf("</style>", b)),
-          (f = [a.slice(f, b - 1)]),
-          (b += 8))
-        : -1 == n.indexOf(c) && (b++, (f = d(h)))
+          ? ((f = b + 1),
+            (b = a.indexOf("</style>", b)),
+            (f = [a.slice(f, b - 1)]),
+            (b += 8))
+          : -1 == n.indexOf(c) && (b++, (f = d(h)))
       : b++;
     return { tagName: c, attributes: g, children: f };
   }
@@ -92,7 +92,7 @@ function tXml(a, c) {
     n = c.noChildNodes || ["img", "br", "input", "meta", "link"],
     h = null;
   if (void 0 !== c.attrValue)
-    for (c.attrName = c.attrName || "id", h = []; -1 !== (b = f()); )
+    for (c.attrName = c.attrName || "id", h = []; -1 !== (b = f());)
       (b = a.lastIndexOf("<", b)),
         -1 !== b && h.push(g()),
         (a = a.substr(b)),
@@ -139,8 +139,8 @@ tXml.stringify = function (a) {
               null === b.attributes[f]
                 ? d + (" " + f)
                 : -1 === b.attributes[f].indexOf('"')
-                ? d + (" " + f + '="' + b.attributes[f].trim() + '"')
-                : d + (" " + f + "='" + b.attributes[f].trim() + "'");
+                  ? d + (" " + f + '="' + b.attributes[f].trim() + '"')
+                  : d + (" " + f + "='" + b.attributes[f].trim() + "'");
           d += ">";
           c(b.children);
           d += "</" + b.tagName + ">";
@@ -171,4 +171,8 @@ tXml.getElementsByClassName = function (a, c, d) {
     attrValue: "[a-zA-Z0-9- ]*" + c + "[a-zA-Z0-9- ]*",
   });
   return d ? tXml.simplify(a) : a;
+};
+tXml.getElementByTagName = function (a, c, d) {
+  a = tXml(a, { tagName: c });
+  return d ? tXml.simplify(a) : a[0];
 };

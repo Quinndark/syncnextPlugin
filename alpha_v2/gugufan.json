@@ -1,0 +1,52 @@
+{
+    "name": "咕咕番",
+    "description": "咕咕番",
+    "host": "https://www.gugufan.com",
+    "files": [
+        "gugufan.js",
+        "txml.js",
+        "base64.js"
+    ],
+    "pages": [
+        {
+            "key": "index",
+            "title": "首页",
+            "url": "https://www.gugufan.com",
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "lianzai",
+            "title": "连载",
+            "url": "https://www.gugufan.com/index.php/vod/show/id/6.html",
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "wanjie",
+            "title": "完结",
+            "url": "https://www.gugufan.com/index.php/vod/show/id/7.html",
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "bd",
+            "title": "剧场",
+            "url": "https://www.gugufan.com/index.php/vod/show/id/21.html",
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "teshe",
+            "title": "特摄",
+            "url": "https://www.gugufan.com/index.php/vod/show/id/23.html",
+            "javascript": "buildMedias"
+        }
+    ],
+    "episodes": {
+        "javascript": "Episodes"
+    },
+    "player": {
+        "javascript": "Player"
+    },
+    "search": {
+        "url": "https://www.gugufan.com/index.php/vod/search.html?wd=${keyword}",
+        "javascript": "Search"
+    }
+}

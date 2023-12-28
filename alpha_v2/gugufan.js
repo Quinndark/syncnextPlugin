@@ -62,7 +62,7 @@ function buildMedias(inputURL) {
 }
 function buildURL(href) {
     if (!href.startsWith("http")) {
-        href = "https://anime.girigirilove.com" + href;
+        href = "https://www.gugufan.com" + href;
     }
     return href;
 }
@@ -106,7 +106,7 @@ function Player(inputURL) {
 
         var js = JSON.parse(html);
         urlEncode = base64Decode(js.url)
-        url = decodeURIComponent(urlEncode)
+        //url = decodeURIComponent(urlEncode)
         $next.toPlayer(url);
 
     })
@@ -155,3 +155,5 @@ function findAllByKey(obj, keyToFind) {
 function print(params) {
     console.log(JSON.stringify(params));
 }
+
+

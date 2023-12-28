@@ -1,0 +1,64 @@
+{
+    "name": "在线之家",
+    "description": "在线观看美剧",
+    "host": "https://jiohub.top",
+    "files": [
+        "jojo.js",
+        "txml.js",
+        "base64.js"
+    ],
+    "pages": [
+        {
+            "key": "index",
+            "title": "首页",
+            "url": "https://jiohub.top",
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "movie",
+            "title": "电影",
+            "url": "https://jiohub.top/video/%E7%94%B5%E5%BD%B1?page=${pageNumber}&size=18",
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "us",
+            "title": "美剧",
+            "url": "https://jiohub.top/video/%E7%BE%8E%E5%89%A7?page=${pageNumber}&size=18",
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "kr",
+            "title": "韩剧",
+            "url": "https://jiohub.top/video/%E9%9F%A9%E5%89%A7?page=${pageNumber}&size=18",
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "jp",
+            "title": "日剧",
+            "url": "https://jiohub.top/video/%E6%97%A5%E5%89%A7?page=${pageNumber}&size=18",
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "anime",
+            "title": "动漫",
+            "url": "https://jiohub.top/video/%E5%8A%A8%E6%BC%AB?page=${pageNumber}&size=18",
+            "javascript": "buildMedias"
+        },
+        {
+            "key": "guochan",
+            "title": "国产",
+            "url": "https://jiohub.top/video/%E5%9B%BD%E4%BA%A7?page=${pageNumber}&size=18",
+            "javascript": "buildMedias"
+        }
+    ],
+    "episodes": {
+        "javascript": "Episodes"
+    },
+    "player": {
+        "javascript": "Player"
+    },
+    "search": {
+        "url": "https://jiohub.top/video/search?q=${keyword}&pid=Z9nOaT5uc1hWYF2ASy4fK9Yqn-Y7KE/nEn3oK5-Joro=",
+        "javascript": "Search"
+    }
+}
