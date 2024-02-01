@@ -104,10 +104,36 @@ function Player(inputURL) {
         var xml = res.body;
         html = xml.match(/r player_.*?=(.*?)</)[1];
 
+
         var js = JSON.parse(html);
         urlEncode = base64Decode(js.url)
+
+        var req1 = {
+            url: 'https://a79.yizhoushi.com/player/?url=' + urlEncode,
+            method: "GET",
+        };
+
+        $http.fetch(req1).then(function (res) {
+            var html = res.body;
+
+            src = html.match(/r src="(.+?)"/)[1];
+
+            var req2 = {
+                url: 'https://a79.yizhoushi.com/player/' + src,
+                method: "GET",
+            };
+
+            $http.fetch(req2).then(function (res) {
+
+                $next.toPlayer(urlEncode);
+
+            })
+
+        })
+
+
         //url = decodeURIComponent(urlEncode)
-        $next.toPlayer(url);
+
 
     })
 }

@@ -1,7 +1,7 @@
 {
     "name": "在线之家",
     "description": "在线观看美剧",
-    "host": "https://www.zxzj.pro",
+    "host": "https://www.zxzja.com",
     "files": [
         "zxzj.js",
         "txml.js",
@@ -11,37 +11,37 @@
         {
             "key": "index",
             "title": "首页",
-            "url": "https://www.zxzj.pro",
+            "url": "https://www.zxzja.com",
             "javascript": "buildMedias"
         },
         {
             "key": "movie",
             "title": "电影",
-            "url": "https://www.zxzj.pro/list/1-${pageNumber}.html",
+            "url": "https://www.zxzja.com/list/1-${pageNumber}.html",
             "javascript": "buildMedias"
         },
         {
             "key": "us",
             "title": "美剧",
-            "url": "https://www.zxzj.pro/list/2-${pageNumber}.html",
+            "url": "https://www.zxzja.com/list/2-${pageNumber}.html",
             "javascript": "buildMedias"
         },
         {
             "key": "kr",
             "title": "韩剧",
-            "url": "https://www.zxzj.pro/list/3-${pageNumber}.html",
+            "url": "https://www.zxzja.com/list/3-${pageNumber}.html",
             "javascript": "buildMedias"
         },
         {
             "key": "jp",
             "title": "日剧",
-            "url": "https://www.zxzj.pro/list/4-${pageNumber}.html",
+            "url": "https://www.zxzja.com/list/4-${pageNumber}.html",
             "javascript": "buildMedias"
         },
         {
             "key": "anime",
             "title": "动漫",
-            "url": "https://www.zxzj.pro/list/6-${pageNumber}.html",
+            "url": "https://www.zxzja.com/list/6-${pageNumber}.html",
             "javascript": "buildMedias"
         }
     ],
@@ -52,7 +52,7 @@
         "javascript": "Player"
     },
     "search": {
-        "url": "https://www.zxzj.pro/vodsearch/-------------.html?wd=${keyword}&submit=",
+        "url": "https://www.zxzja.com/vodsearch/-------------.html?wd=${keyword}&submit=",
         "javascript": "Search"
     }
 }
