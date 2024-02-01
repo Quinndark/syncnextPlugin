@@ -59,7 +59,7 @@ function buildMedias(inputURL) {
 }
 function buildURL(href) {
     if (!href.startsWith("http")) {
-        href = "https://www.zxzj.pro" + href;
+        href = "https://www.zxzja.com" + href;
     }
     return href;
 }
@@ -116,7 +116,7 @@ function Player(inputURL) {
                 url: url,
                 method: "GET",
                 headers: {
-                    'Referer': 'https://www.zxzj.pro',
+                    'Referer': 'https://www.zxzja.com',
                     'Sec-Fetch-Dest': 'iframe',
                     'Sec-Fetch-Site': 'cross-site',
                     'Sec-Fetch-Mode': 'navigate',
@@ -152,7 +152,7 @@ function Player(inputURL) {
                 url: url,
                 method: "GET",
                 headers: {
-                    'Referer': 'https://www.zxzj.pro',
+                    'Referer': 'https://www.zxzja.com',
                     'Sec-Fetch-Dest': 'iframe',
                     'Sec-Fetch-Site': 'cross-site',
                     'Sec-Fetch-Mode': 'navigate',
