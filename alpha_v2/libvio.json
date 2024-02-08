@@ -1,7 +1,7 @@
 {
   "name": "libvio",
   "description": "海量粵語節目",
-  "host": "https://www.libvio.pro/",
+  "host": "https://www.libvio.la/",
   "files": [
     "txml.js",
     "libvio.js"
@@ -10,38 +10,38 @@
     {
       "key": "index",
       "title": "最近更新",
-      "url": "https://www.libvio.pro/",
+      "url": "https://www.libvio.la/",
       "timeout": 50,
       "javascript": "buildMedias"
     },
     {
       "key": "movie",
       "title": "电影",
-      "url": "https://www.libvio.pro/type/1-${pageNumber}.html",
+      "url": "https://www.libvio.la/type/1-${pageNumber}.html",
       "javascript": "buildMedias"
     },
     {
       "key": "series",
       "title": "电视剧",
-      "url": "https://www.libvio.pro/type/2-${pageNumber}.html",
+      "url": "https://www.libvio.la/type/2-${pageNumber}.html",
       "javascript": "buildMedias"
     },
     {
       "key": "anime",
       "title": "动漫",
-      "url": "https://www.libvio.pro/type/4-${pageNumber}.html",
+      "url": "https://www.libvio.la/type/4-${pageNumber}.html",
       "javascript": "buildMedias"
     },
     {
       "key": "jpandkr",
       "title": "日韩剧",
-      "url": "https://www.libvio.pro/type/15-${pageNumber}.html",
+      "url": "https://www.libvio.la/type/15-${pageNumber}.html",
       "javascript": "buildMedias"
     },
     {
       "key": "euandus",
       "title": "欧美剧",
-      "url": "https://www.libvio.pro/type/16-${pageNumber}.html",
+      "url": "https://www.libvio.la/type/16-${pageNumber}.html",
       "javascript": "buildMedias"
     }
   ],
@@ -53,7 +53,7 @@
     "javascript": "Player"
   },
   "search": {
-    "url": "https://www.libvio.pro/search/-------------.html?wd=${keyword}submit=",
+    "url": "https://www.libvio.la/search/-------------.html?wd=${keyword}submit=",
     "javascript": "buildMedias"
   }
 }

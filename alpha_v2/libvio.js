@@ -32,7 +32,7 @@ function buildEpisodeData(id, title, episodeDetailURL) {
 
 function buildURL(href) {
     if (!href.startsWith("http")) {
-        href = "https://www.libvio.pro" + href;
+        href = "https://www.libvio.la" + href;
     }
     return href;
 }
@@ -130,7 +130,7 @@ function Player(inputURL) {
         var nid = js.nid;
         var paurl = 'https://p2.cfnode1.xyz/ty3.php?url=';
         var req2 = {
-            url: 'https://www.libvio.pro' + '/static/player/' + from + '.js',
+            url: 'https://www.libvio.la' + '/static/player/' + from + '.js',
             method: "GET",
         };
 
@@ -145,7 +145,7 @@ function Player(inputURL) {
                     var req = {
                         url: playAPIURL,
                         headers: {
-                            Referer: 'https://www.libvio.pro/'
+                            Referer: 'https://www.libvio.la/'
                         }
                     };
                     //print(req);
@@ -191,7 +191,7 @@ function Player(inputURL) {
                     var req = {
                         url: playAPIURL,
                         headers: {
-                            Referer: 'https://www.libvio.pro/'
+                            Referer: 'https://www.libvio.la/'
                         }
                     };
                     //print(req);
@@ -232,7 +232,7 @@ function Player(inputURL) {
                     var req = {
                         url: playAPIURL,
                         headers: {
-                            Referer: 'https://www.libvio.pro/'
+                            Referer: 'https://www.libvio.la/'
                         }
                     };
                     //print(req);
