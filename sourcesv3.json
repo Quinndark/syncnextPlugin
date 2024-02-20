@@ -6,7 +6,7 @@
         "Search": true,
         "title": "libvio",
         "name": "libvio",
-        "cover": "https://s2.loli.net/2023/12/28/KoJRfMV4DsgNTl9.png",
+        "Cover": "https://s2.loli.net/2023/12/28/KoJRfMV4DsgNTl9.png",
         "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/libvio.json"
     },
     {
@@ -16,7 +16,7 @@
         "Search": true,
         "title": "anfuns",
         "name": "anfuns",
-        "cover": "https://bj.bcebos.com/baidu-rmb-video-cover-1/5735e9da868abdd0c0865eb3948d25e8.png",
+        "Cover": "https://bj.bcebos.com/baidu-rmb-video-cover-1/5735e9da868abdd0c0865eb3948d25e8.png",
         "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/anfuns.json"
     },
     {
@@ -25,7 +25,7 @@
         "note": "grigri动漫",
         "Search": true,
         "name": "grigri动漫",
-        "cover": "https://s2.loli.net/2023/12/28/HIJvdf8AlzDw1B4.png",
+        "Cover": "https://s2.loli.net/2023/12/28/HIJvdf8AlzDw1B4.png",
         "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/grigri.json"
     },
     {
@@ -40,7 +40,7 @@
         "Top": true,
         "note": "在线观看最新美剧",
         "name": "在线之家",
-        "cover": "https://s2.loli.net/2023/12/28/qP7yAGswkvB2nDU.png",
+        "Cover": "https://s2.loli.net/2023/12/28/qP7yAGswkvB2nDU.png",
         "api": "syncnextPlugin://https://raw.githubusercontent.com/Quinndark/syncnextPlugin/main/alpha_v2/zxzj.json"
     }
 ]
