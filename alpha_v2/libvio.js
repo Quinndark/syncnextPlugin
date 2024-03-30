@@ -128,7 +128,7 @@ function Player(inputURL) {
         var next = js.link_next;
         var id = js.id;
         var nid = js.nid;
-        var paurl = 'https://p2.cfnode1.xyz/ty3.php?url=';
+        var paurl = 'https://www.libviohd.com/vid/ty3.php?url=';
         var req2 = {
             url: 'https://www.libvio.vip' + '/static/player/' + from + '.js',
             method: "GET",
@@ -184,7 +184,7 @@ function Player(inputURL) {
             $http.fetch(req2).then(
                 function (res) {
                     paurl = res.body.match(/ src="(.*?)'/)[1];
-                    var paurl = 'https://p2.cfnode1.xyz/ty4.php?url='
+                    var paurl = 'https://www.libviohd.com/vid/ty4.php?url='
                     var playAPIURL =
                         paurl + url;
 
